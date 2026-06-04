@@ -1,9 +1,10 @@
-import { Menu, ChevronLeft, ChevronRight, X } from "lucide-react"
+import { Menu, ChevronLeft, ChevronRight, X, ChevronDown } from "lucide-react"
 import { useState } from "react"
 
 export default function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isChampDropdownOpen, setIsChampDropdownOpen] = useState(false)
 
   const slides = [
     {
@@ -59,16 +60,46 @@ export default function HeroSection() {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
-          {navItems.map((item) => (
-            <button
-              key={item.name}
-              onClick={() => scrollToSection(item.href)}
-              className="relative text-white hover:text-gray-300 transition-colors duration-300 font-medium tracking-wide pb-1 group"
-            >
-              {item.name}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 ease-out group-hover:w-full"></span>
-            </button>
-          ))}
+          {navItems.map((item) =>
+            item.name === "Чемпионат" ? (
+              <div key={item.name} className="relative">
+                <button
+                  onClick={() => setIsChampDropdownOpen((v) => !v)}
+                  onBlur={() => setTimeout(() => setIsChampDropdownOpen(false), 150)}
+                  className="relative text-white hover:text-gray-300 transition-colors duration-300 font-medium tracking-wide pb-1 group flex items-center gap-1"
+                >
+                  {item.name}
+                  <ChevronDown size={14} className={`transition-transform duration-200 ${isChampDropdownOpen ? "rotate-180" : ""}`} />
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 ease-out group-hover:w-full"></span>
+                </button>
+                {isChampDropdownOpen && (
+                  <div className="absolute top-full left-0 mt-2 w-52 bg-black/90 border border-white/20 rounded-lg overflow-hidden shadow-xl">
+                    <button
+                      onClick={() => { scrollToSection(item.href); setIsChampDropdownOpen(false) }}
+                      className="w-full text-left px-4 py-3 text-white hover:bg-white/10 transition-colors text-sm font-medium"
+                    >
+                      Чемпионат 2025/2026
+                    </button>
+                    <button
+                      onClick={() => { scrollToSection(item.href); setIsChampDropdownOpen(false) }}
+                      className="w-full text-left px-4 py-3 text-white hover:bg-white/10 transition-colors text-sm font-medium"
+                    >
+                      Чемпионат 2026/2027
+                    </button>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <button
+                key={item.name}
+                onClick={() => scrollToSection(item.href)}
+                className="relative text-white hover:text-gray-300 transition-colors duration-300 font-medium tracking-wide pb-1 group"
+              >
+                {item.name}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 ease-out group-hover:w-full"></span>
+              </button>
+            )
+          )}
         </div>
 
         {/* Mobile Menu Button */}
@@ -85,15 +116,33 @@ export default function HeroSection() {
       {isMenuOpen && (
         <div className="absolute top-0 left-0 w-full h-full bg-black/90 z-30 md:hidden">
           <div className="flex flex-col items-center justify-center h-full space-y-8">
-            {navItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => scrollToSection(item.href)}
-                className="text-white text-2xl font-bold tracking-wider hover:text-gray-300 transition-colors duration-300"
-              >
-                {item.name}
-              </button>
-            ))}
+            {navItems.map((item) =>
+              item.name === "Чемпионат" ? (
+                <div key={item.name} className="flex flex-col items-center space-y-4">
+                  <span className="text-white/50 text-lg font-bold tracking-wider">Чемпионат</span>
+                  <button
+                    onClick={() => scrollToSection(item.href)}
+                    className="text-white text-xl font-bold tracking-wider hover:text-gray-300 transition-colors duration-300"
+                  >
+                    2025/2026
+                  </button>
+                  <button
+                    onClick={() => scrollToSection(item.href)}
+                    className="text-white text-xl font-bold tracking-wider hover:text-gray-300 transition-colors duration-300"
+                  >
+                    2026/2027
+                  </button>
+                </div>
+              ) : (
+                <button
+                  key={item.name}
+                  onClick={() => scrollToSection(item.href)}
+                  className="text-white text-2xl font-bold tracking-wider hover:text-gray-300 transition-colors duration-300"
+                >
+                  {item.name}
+                </button>
+              )
+            )}
           </div>
         </div>
       )}

@@ -8,23 +8,23 @@ export default function HeroSection() {
 
   const slides = [
     {
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-j46TPXDHzpn3M65wMva3qHPNhwokYn.png",
-      alt: "Группа бегунов в движении",
+      image: "https://cdn.poehali.dev/projects/959fe10d-da11-4611-b217-37f76879518b/files/1e3126e7-0f59-4472-a9eb-1f4dcfef097d.jpg",
+      alt: "Игроки в гандбол в динамичном прыжке",
     },
     {
       image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-oH2K0gw1HEqvYhhbwJrYbmkBrbksyk.png",
-      alt: "Бегунья с эффектом размытия",
+      alt: "Гандбольный матч — атака на ворота",
     },
     {
       image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-DQ2brNc5Vszxllx17YNA6JqGqiHaRm.png",
-      alt: "Бегун во главе группы",
+      alt: "Команда в раздевалке перед матчем",
     },
   ]
 
   const navItems = [
     { name: "Главная", href: "#hero" },
-    { name: "Миссия", href: "#mission" },
-    { name: "Сообщество", href: "#community" },
+    { name: "О клубе", href: "#mission" },
+    { name: "Игроки", href: "#community" },
     { name: "Отзывы", href: "#testimonials" },
     { name: "Вступить", href: "#join" },
   ]
@@ -57,7 +57,7 @@ export default function HeroSection() {
       {/* Navigation */}
       <nav className="relative z-20 flex items-center justify-between p-6 md:p-8">
         {/* Logo/Brand */}
-        <div className="text-white font-bold text-xl tracking-wider">STRIDE</div>
+        <div className="text-white font-bold text-xl tracking-wider">HANDBALL CITY</div>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
@@ -105,13 +105,13 @@ export default function HeroSection() {
         <div className="text-center text-white max-w-4xl">
           {/* Main Title */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-wider mb-4 leading-none">
-            STRIDE
+            HANDBALL
             <br />
-            COLLECTIVE
+            CITY
           </h1>
 
           {/* Subtitle */}
-          <p className="text-xl md:text-2xl font-light tracking-wide mb-8 text-gray-200">Беговое сообщество</p>
+          <p className="text-xl md:text-2xl font-light tracking-wide mb-8 text-gray-200">Гандбольный клуб · Чемпионат города</p>
 
           {/* CTA Button - Now using LiquidButton */}
           <LiquidButton
@@ -119,7 +119,7 @@ export default function HeroSection() {
             className="font-semibold text-lg tracking-wide"
             onClick={() => scrollToSection("#join")}
           >
-            Присоединиться
+            Вступить в клуб
           </LiquidButton>
         </div>
       </div>

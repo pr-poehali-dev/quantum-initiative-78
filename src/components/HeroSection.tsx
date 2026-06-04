@@ -24,8 +24,8 @@ export default function HeroSection() {
   const navItems = [
     { name: "Главная", href: "#hero" },
     { name: "О клубе", href: "#mission" },
-    { name: "Игроки", href: "#community" },
     { name: "Чемпионат", href: "#championship" },
+    { name: "Игроки", href: "#community" },
   ]
 
   // Navigation handlers

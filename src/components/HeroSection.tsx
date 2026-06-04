@@ -1,25 +1,32 @@
-import { Menu, ChevronLeft, ChevronRight, X, ChevronDown } from "lucide-react"
+import { Menu, X, ChevronDown } from "lucide-react"
 import { useState } from "react"
 
+const collagePhotos = [
+  {
+    src: "https://cdn.poehali.dev/projects/959fe10d-da11-4611-b217-37f76879518b/bucket/36352669-bcce-470c-9454-3491ece3de12.jpg",
+    alt: "Командное фото",
+    className: "col-span-1 row-span-2",
+  },
+  {
+    src: "https://cdn.poehali.dev/projects/959fe10d-da11-4611-b217-37f76879518b/bucket/e4f6ef49-f9d4-4276-b7eb-4bb578736d5a.jpg",
+    alt: "Динамичный эпизод матча",
+    className: "col-span-1 row-span-1",
+  },
+  {
+    src: "https://cdn.poehali.dev/projects/959fe10d-da11-4611-b217-37f76879518b/bucket/8c0a91ee-9b6f-4587-b688-3228376f1625.jpg",
+    alt: "Награждение лучших игроков",
+    className: "col-span-1 row-span-1",
+  },
+  {
+    src: "https://cdn.poehali.dev/projects/959fe10d-da11-4611-b217-37f76879518b/bucket/4a5098a7-4241-42fb-ac35-1723483891dd.jpg",
+    alt: "Эмоции команды",
+    className: "col-span-2 row-span-1",
+  },
+]
+
 export default function HeroSection() {
-  const [currentSlide, setCurrentSlide] = useState(0)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isChampDropdownOpen, setIsChampDropdownOpen] = useState(false)
-
-  const slides = [
-    {
-      image: "https://cdn.poehali.dev/projects/959fe10d-da11-4611-b217-37f76879518b/files/1e3126e7-0f59-4472-a9eb-1f4dcfef097d.jpg",
-      alt: "Игроки в гандбол в динамичном прыжке",
-    },
-    {
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-oH2K0gw1HEqvYhhbwJrYbmkBrbksyk.png",
-      alt: "Гандбольный матч — атака на ворота",
-    },
-    {
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-DQ2brNc5Vszxllx17YNA6JqGqiHaRm.png",
-      alt: "Команда в раздевалке перед матчем",
-    },
-  ]
 
   const navItems = [
     { name: "Главная", href: "#hero" },
@@ -27,10 +34,6 @@ export default function HeroSection() {
     { name: "Чемпионат", href: "#championship" },
     { name: "Игроки", href: "#community" },
   ]
-
-  // Navigation handlers
-  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length)
-  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href)
@@ -42,16 +45,16 @@ export default function HeroSection() {
 
   return (
     <div id="hero" className="relative h-screen w-full overflow-hidden bg-black">
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-1000 ease-in-out"
-        style={{
-          backgroundImage: `url('${slides[currentSlide].image}')`,
-        }}
-      >
-        {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/40" />
+      {/* Collage Background */}
+      <div className="absolute inset-0 grid grid-cols-2 grid-rows-3 gap-0.5">
+        {collagePhotos.map((photo, i) => (
+          <div key={i} className={`${photo.className} overflow-hidden`}>
+            <img src={photo.src} alt={photo.alt} className="w-full h-full object-cover" />
+          </div>
+        ))}
       </div>
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/55" />
 
       {/* Navigation */}
       <nav className="relative z-20 flex items-center justify-between p-6 md:p-8">
@@ -166,58 +169,11 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Slider Navigation */}
+      {/* Scroll hint */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
-        <div className="flex items-center space-x-4">
-          {/* Previous Arrow */}
-          <button
-            onClick={prevSlide}
-            className="text-white hover:text-gray-300 transition-colors p-2"
-            aria-label="Предыдущий слайд"
-          >
-            <ChevronLeft size={24} />
-          </button>
-
-          {/* Slide Indicators */}
-          <div className="flex space-x-2">
-            {slides.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  currentSlide === index ? "bg-white" : "bg-white/40 hover:bg-white/60"
-                }`}
-                aria-label={`Перейти к слайду ${index + 1}`}
-              />
-            ))}
-          </div>
-
-          {/* Next Arrow */}
-          <button
-            onClick={nextSlide}
-            className="text-white hover:text-gray-300 transition-colors p-2"
-            aria-label="Следующий слайд"
-          >
-            <ChevronRight size={24} />
-          </button>
-        </div>
+        <div className="w-0.5 h-10 bg-white/40 mx-auto animate-pulse"></div>
       </div>
 
-      {/* Side Navigation Indicators */}
-      <div className="absolute right-8 top-1/2 transform -translate-y-1/2 z-20 hidden md:block">
-        <div className="flex flex-col space-y-3">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`w-1 h-8 transition-all duration-300 ${
-                currentSlide === index ? "bg-white" : "bg-white/40 hover:bg-white/60"
-              }`}
-              aria-label={`Слайд ${index + 1}`}
-            />
-          ))}
-        </div>
-      </div>
     </div>
   )
 }

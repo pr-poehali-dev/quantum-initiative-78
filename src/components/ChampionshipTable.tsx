@@ -32,7 +32,7 @@ export default function ChampionshipTable() {
             <span className="bg-gradient-to-r from-white via-gray-300 to-white bg-clip-text text-transparent block">ПО ГАНДБОЛУ СРЕДИ МУЖЧИН</span>
           </h2>
           <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
-            Турнирная таблица · Сезон 2024–2025 · 12 команд
+            Турнирная таблица · Сезон 2025/2026 · 12 команд
           </p>
         </motion.div>
 

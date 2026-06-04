@@ -27,9 +27,9 @@ export default function ChampionshipTable() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-6xl font-black tracking-wider text-white mb-4">
-            ЧЕМПИОНАТ{" "}
-            <span className="bg-gradient-to-r from-white via-gray-300 to-white bg-clip-text text-transparent">ГОРОДА</span>
+          <h2 className="text-3xl md:text-5xl font-black tracking-wider text-white mb-4 leading-tight">
+            ЧЕМПИОНАТ САНКТ-ПЕТЕРБУРГА{" "}
+            <span className="bg-gradient-to-r from-white via-gray-300 to-white bg-clip-text text-transparent block">ПО ГАНДБОЛУ СРЕДИ МУЖЧИН</span>
           </h2>
           <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
             Турнирная таблица · Сезон 2024–2025 · 12 команд

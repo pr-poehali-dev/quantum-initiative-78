@@ -1,9 +1,6 @@
 import HeroSection from "@/components/HeroSection"
 import { TextGradientScroll } from "@/components/ui/text-gradient-scroll"
 import { Timeline } from "@/components/ui/timeline"
-import { StaggerTestimonials } from "@/components/ui/stagger-testimonials"
-import { motion } from "framer-motion"
-import SmoothScrollHero from "@/components/ui/smooth-scroll-hero"
 import ChampionshipTable from "@/components/ChampionshipTable"
 
 export default function Index() {
@@ -82,45 +79,8 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section id="testimonials" className="relative py-20 bg-white">
-        {/* Subtle Grid Pattern */}
-        <div className="absolute inset-0 bg-grid-subtle opacity-30 pointer-events-none" />
-
-        <div className="container mx-auto px-6 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-6xl font-black tracking-wider text-gray-900 mb-6">
-              Что говорят наши{" "}
-              <span className="bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">ИГРОКИ</span>
-            </h2>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-12">
-              Реальные отзывы игроков и тренеров Handball City — о команде, чемпионате и победах.
-            </p>
-          </motion.div>
-
-          <StaggerTestimonials />
-        </div>
-      </section>
-
       {/* Championship Table */}
       <ChampionshipTable />
-
-      {/* Smooth Scroll Hero with CTA Overlay */}
-      <section id="join" className="relative">
-        <SmoothScrollHero
-          scrollHeight={2500}
-          desktopImage="/images/runners-motion-blur.png"
-          mobileImage="/images/runners-motion-blur.png"
-          initialClipPercentage={30}
-          finalClipPercentage={70}
-        />
-      </section>
     </div>
   )
 }

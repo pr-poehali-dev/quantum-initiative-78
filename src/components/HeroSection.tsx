@@ -25,7 +25,7 @@ export default function HeroSection() {
     { name: "Главная", href: "#hero" },
     { name: "О клубе", href: "#mission" },
     { name: "Игроки", href: "#community" },
-    { name: "Отзывы", href: "#testimonials" },
+    { name: "Чемпионат", href: "#championship" },
     { name: "Вступить", href: "#join" },
   ]
 

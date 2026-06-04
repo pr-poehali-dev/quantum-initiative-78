@@ -96,7 +96,7 @@ const SmoothScrollHero: React.FC<SmoothScrollHeroProps> = ({
 
             {/* Supporting Text */}
             <p className="text-lg md:text-xl lg:text-2xl text-gray-200 mb-8 leading-relaxed font-medium">
-              Вступай в лучший гандбольный клуб города — тренируйся с профессионалами,
+              Вступай в СШОР Приморского района — тренируйся с профессионалами,
               <br className="hidden md:block" />
               участвуй в чемпионате и становись частью победной команды.
             </p>

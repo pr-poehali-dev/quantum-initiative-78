@@ -57,7 +57,7 @@ export default function HeroSection() {
       {/* Navigation */}
       <nav className="relative z-20 flex items-center justify-between p-6 md:p-8">
         {/* Logo/Brand */}
-        <div className="text-white font-bold text-xl tracking-wider">HANDBALL CITY</div>
+        <div className="text-white font-bold text-xl tracking-wider">СШОР ПРИМОРСКОГО</div>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
@@ -104,14 +104,16 @@ export default function HeroSection() {
       <div className="relative z-10 flex h-full items-center justify-center px-6">
         <div className="text-center text-white max-w-4xl">
           {/* Main Title */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-wider mb-4 leading-none">
-            HANDBALL
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-wider mb-4 leading-none">
+            СШОР
             <br />
-            CITY
+            ПРИМОРСКОГО
+            <br />
+            РАЙОНА
           </h1>
 
           {/* Subtitle */}
-          <p className="text-xl md:text-2xl font-light tracking-wide mb-8 text-gray-200">Гандбольный клуб · Чемпионат города</p>
+          <p className="text-xl md:text-2xl font-light tracking-wide mb-8 text-gray-200">Гандбольный клуб · Чемпионат Санкт-Петербурга</p>
 
           {/* CTA Button - Now using LiquidButton */}
           <LiquidButton

@@ -2,7 +2,7 @@ import { motion } from "framer-motion"
 import Icon from "@/components/ui/icon"
 
 const teams = [
-  { pos: 1, name: "Handball City", played: 22, won: 18, drawn: 2, lost: 2, goalsFor: 547, goalsAgainst: 412, points: 56, highlight: true },
+  { pos: 1, name: "СШОР Приморского района", played: 22, won: 18, drawn: 2, lost: 2, goalsFor: 547, goalsAgainst: 412, points: 56, highlight: true },
   { pos: 2, name: "Динамо", played: 22, won: 16, drawn: 3, lost: 3, goalsFor: 498, goalsAgainst: 401, points: 51, highlight: false },
   { pos: 3, name: "Спартак", played: 22, won: 15, drawn: 2, lost: 5, goalsFor: 471, goalsAgainst: 418, points: 47, highlight: false },
   { pos: 4, name: "Атлант", played: 22, won: 13, drawn: 4, lost: 5, goalsFor: 453, goalsAgainst: 430, points: 43, highlight: false },

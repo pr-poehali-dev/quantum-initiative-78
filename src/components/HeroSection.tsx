@@ -1,4 +1,3 @@
-import { LiquidButton } from "@/components/ui/liquid-glass-button"
 import { Menu, ChevronLeft, ChevronRight, X } from "lucide-react"
 import { useState } from "react"
 
@@ -26,7 +25,6 @@ export default function HeroSection() {
     { name: "О клубе", href: "#mission" },
     { name: "Игроки", href: "#community" },
     { name: "Чемпионат", href: "#championship" },
-    { name: "Вступить", href: "#join" },
   ]
 
   // Navigation handlers
@@ -115,14 +113,7 @@ export default function HeroSection() {
           {/* Subtitle */}
           <p className="text-xl md:text-2xl font-light tracking-wide mb-8 text-gray-200">Гандбольный клуб · Чемпионат Санкт-Петербурга</p>
 
-          {/* CTA Button - Now using LiquidButton */}
-          <LiquidButton
-            size="xxl"
-            className="font-semibold text-lg tracking-wide"
-            onClick={() => scrollToSection("#join")}
-          >
-            Вступить в клуб
-          </LiquidButton>
+
         </div>
       </div>
 

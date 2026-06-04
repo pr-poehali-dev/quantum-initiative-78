@@ -2,18 +2,18 @@ import { motion } from "framer-motion"
 import Icon from "@/components/ui/icon"
 
 const teams = [
-  { pos: 1, name: "СШОР Приморского района", played: 22, won: 18, drawn: 2, lost: 2, goalsFor: 547, goalsAgainst: 412, points: 56, highlight: true },
-  { pos: 2, name: "Динамо", played: 22, won: 16, drawn: 3, lost: 3, goalsFor: 498, goalsAgainst: 401, points: 51, highlight: false },
-  { pos: 3, name: "Спартак", played: 22, won: 15, drawn: 2, lost: 5, goalsFor: 471, goalsAgainst: 418, points: 47, highlight: false },
-  { pos: 4, name: "Атлант", played: 22, won: 13, drawn: 4, lost: 5, goalsFor: 453, goalsAgainst: 430, points: 43, highlight: false },
-  { pos: 5, name: "Буревестник", played: 22, won: 12, drawn: 3, lost: 7, goalsFor: 441, goalsAgainst: 438, points: 39, highlight: false },
-  { pos: 6, name: "Олимп", played: 22, won: 10, drawn: 4, lost: 8, goalsFor: 420, goalsAgainst: 435, points: 34, highlight: false },
-  { pos: 7, name: "Ракета", played: 22, won: 9, drawn: 4, lost: 9, goalsFor: 408, goalsAgainst: 441, points: 31, highlight: false },
-  { pos: 8, name: "Виктория", played: 22, won: 8, drawn: 3, lost: 11, goalsFor: 391, goalsAgainst: 452, points: 27, highlight: false },
-  { pos: 9, name: "Сокол", played: 22, won: 7, drawn: 2, lost: 13, goalsFor: 378, goalsAgainst: 469, points: 23, highlight: false },
-  { pos: 10, name: "Гром", played: 22, won: 5, drawn: 3, lost: 14, goalsFor: 361, goalsAgainst: 487, points: 18, highlight: false },
-  { pos: 11, name: "Факел", played: 22, won: 3, drawn: 2, lost: 17, goalsFor: 334, goalsAgainst: 511, points: 11, highlight: false },
-  { pos: 12, name: "Старт", played: 22, won: 2, drawn: 0, lost: 20, goalsFor: 298, goalsAgainst: 546, points: 6, highlight: false },
+  { pos: 1,  name: 'ЛГК "Викинг"',                          played: 11, won: 10, drawn: 1, lost: 0,  goalsFor: 391, goalsAgainst: 232, points: 21, highlight: false },
+  { pos: 2,  name: "СШ Приморского р-на - 1",                played: 11, won: 10, drawn: 0, lost: 1,  goalsFor: 362, goalsAgainst: 245, points: 20, highlight: true  },
+  { pos: 3,  name: "СПБГАУ",                                 played: 11, won: 9,  drawn: 0, lost: 2,  goalsFor: 322, goalsAgainst: 238, points: 18, highlight: false },
+  { pos: 4,  name: "СШ Приморского р-на - 2",                played: 11, won: 8,  drawn: 1, lost: 2,  goalsFor: 304, goalsAgainst: 222, points: 17, highlight: false },
+  { pos: 5,  name: '"Кронверкские барсы" им. Алексикова Ю.П.',played: 11, won: 7,  drawn: 0, lost: 4,  goalsFor: 287, goalsAgainst: 230, points: 14, highlight: false },
+  { pos: 6,  name: "СШОР Кировского р-на - 1",               played: 11, won: 5,  drawn: 0, lost: 6,  goalsFor: 326, goalsAgainst: 283, points: 10, highlight: false },
+  { pos: 7,  name: 'ГК «Орешник»',                           played: 11, won: 4,  drawn: 1, lost: 6,  goalsFor: 298, goalsAgainst: 311, points: 9,  highlight: false },
+  { pos: 8,  name: 'ЛГК "Феникс"',                          played: 11, won: 3,  drawn: 1, lost: 7,  goalsFor: 267, goalsAgainst: 351, points: 7,  highlight: false },
+  { pos: 9,  name: "СШ №1 Московского р-на",                 played: 11, won: 3,  drawn: 0, lost: 8,  goalsFor: 229, goalsAgainst: 287, points: 6,  highlight: false },
+  { pos: 10, name: "СШ Приморского р-на - 3",                played: 11, won: 3,  drawn: 0, lost: 8,  goalsFor: 281, goalsAgainst: 351, points: 6,  highlight: false },
+  { pos: 11, name: "СШОР Кировского р-на - 2",               played: 11, won: 2,  drawn: 0, lost: 9,  goalsFor: 264, goalsAgainst: 329, points: 4,  highlight: false },
+  { pos: 12, name: '"Тихие Львы"',                           played: 11, won: 0,  drawn: 0, lost: 11, goalsFor: 175, goalsAgainst: 427, points: 0,  highlight: false },
 ]
 
 export default function ChampionshipTable() {
